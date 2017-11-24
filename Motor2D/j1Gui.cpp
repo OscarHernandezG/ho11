@@ -43,6 +43,11 @@ bool j1Gui::PreUpdate()
 	return true;
 }
 
+bool j1Gui::Update(float dt)
+{
+	return true;
+}
+
 // Called after all Updates
 bool j1Gui::PostUpdate()
 {
@@ -63,9 +68,10 @@ const SDL_Texture* j1Gui::GetAtlas() const
 	return atlas;
 }
 
-bool j1Gui::AdUIElement(iPoint pos, GUI_TYPE type)
+bool j1Gui::AdUIElement(int x,int y, GUI_TYPE type)
 {
 	bool ret = false;
+
 
 	switch (type)
 	{

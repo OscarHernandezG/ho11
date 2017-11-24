@@ -2,6 +2,6 @@
 #include "UI.h"
 
 
-Image::Image(iPoint pos) : UI_Element(pos) {
+Image::Image(int x, int y) : UI_Element(x, y) {
 
 }

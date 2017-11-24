@@ -6,18 +6,19 @@ class Image : public UI_Element
 {
 private:
 
-	
+
 
 public:
-	Image(iPoint pos);
-	~Image();
+	Image(int x, int y);
 
-	bool Update();
+	~Image(){}
 
-	bool Draw();
+	bool Update() { return true; }
+
+	bool Draw() { return true; }
 
 
-	bool CleanUp();
+	bool CleanUp() { return true; }
 
 
 };

@@ -11,15 +11,15 @@ private:
 
 public:
 
-	Label(iPoint pos);
-	~Label();
+	Label(int x, int y);
+	~Label(){}
 
-	bool Update();
+	bool Update() { return true; }
 
-	bool Draw();
+	bool Draw() { return true; }
 
 
-	bool CleanUp();
+	bool CleanUp() { return true; }
 
 
 };

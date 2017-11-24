@@ -34,6 +34,9 @@ public:
 	// Called before all Updates
 	bool PreUpdate();
 
+	// Called each loop iteration
+	bool Update(float dt);
+
 	// Called after all Updates
 	bool PostUpdate();
 
@@ -43,7 +46,8 @@ public:
 	// TODO 2: Create the factory methods
 	// Gui creation functions
 
-	bool AdUIElement(iPoint pos, GUI_TYPE type);
+
+	bool AdUIElement(int x, int y, GUI_TYPE type);
 
 	const SDL_Texture* GetAtlas() const;
 
@@ -51,7 +55,9 @@ private:
 
 	SDL_Texture* atlas;
 	p2SString atlas_file_name;
-//	p2List<UI_Element> ui_elements;
+
+	p2List<UI_Element>* ui_elements;
+
 };
 
 #endif // __j1GUI_H__

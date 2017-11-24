@@ -36,7 +36,7 @@ public:
 public:
 
 	p2List<_TTF_Font*>	fonts;
-	TTF_Font*			default;
+	_TTF_Font*			default;
 };
 
 
