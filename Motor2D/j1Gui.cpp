@@ -42,6 +42,11 @@ bool j1Gui::PreUpdate()
 	return true;
 }
 
+bool j1Gui::Update(float dt)
+{
+	return true;
+}
+
 // Called after all Updates
 bool j1Gui::PostUpdate()
 {

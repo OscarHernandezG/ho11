@@ -46,7 +46,7 @@ bool j1Scene::Start()
 
 	// TODO 3: Create the banner (rect {485, 829, 328, 103}) and the text "Hello World"
 
-	App->gui->AdUIElement()
+	App->gui->AdUIElement();
 
 	return true;
 }
