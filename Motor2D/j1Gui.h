@@ -6,6 +6,18 @@
 #define CURSOR_WIDTH 2
 
 // TODO 1: Create your structure of classes
+enum GUI_TYPE {
+	NO_TYPE,
+
+	IMAGE,
+	LABEL
+};
+struct Gui_Element {
+
+	GUI_TYPE type = NO_TYPE;
+
+
+};
 
 // ---------------------------------------------------
 class j1Gui : public j1Module
@@ -34,6 +46,8 @@ public:
 
 	// TODO 2: Create the factory methods
 	// Gui creation functions
+
+	bool AdUIElement();
 
 	const SDL_Texture* GetAtlas() const;
 

@@ -6,6 +6,7 @@
 #include "j1Fonts.h"
 #include "j1Input.h"
 #include "j1Gui.h"
+#include "UI.h"
 
 j1Gui::j1Gui() : j1Module()
 {
@@ -59,6 +60,17 @@ bool j1Gui::CleanUp()
 const SDL_Texture* j1Gui::GetAtlas() const
 {
 	return atlas;
+}
+
+bool j1Gui::AdUIElement()
+{
+	bool ret = false;
+
+
+
+	ret = true;
+
+	return ret;
 }
 
 // class Gui ---------------------------------------------------
