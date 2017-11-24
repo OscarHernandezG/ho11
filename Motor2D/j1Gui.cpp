@@ -62,10 +62,22 @@ const SDL_Texture* j1Gui::GetAtlas() const
 	return atlas;
 }
 
-bool j1Gui::AdUIElement()
+bool j1Gui::AdUIElement(iPoint pos, GUI_TYPE type)
 {
 	bool ret = false;
 
+	switch (type)
+	{
+	case NO_TYPE:
+		break;
+	case IMAGE:
+		ui_elements.add()
+		break;
+	case LABEL:
+		break;
+	default:
+		break;
+	}
 
 
 	ret = true;

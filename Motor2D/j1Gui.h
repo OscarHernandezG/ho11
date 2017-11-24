@@ -12,12 +12,7 @@ enum GUI_TYPE {
 	IMAGE,
 	LABEL
 };
-struct Gui_Element {
 
-	GUI_TYPE type = NO_TYPE;
-
-
-};
 
 // ---------------------------------------------------
 class j1Gui : public j1Module
@@ -47,7 +42,7 @@ public:
 	// TODO 2: Create the factory methods
 	// Gui creation functions
 
-	bool AdUIElement();
+	bool AdUIElement(iPoint pos, GUI_TYPE type);
 
 	const SDL_Texture* GetAtlas() const;
 
@@ -55,6 +50,7 @@ private:
 
 	SDL_Texture* atlas;
 	p2SString atlas_file_name;
+	p2List<UI_Element> ui_elements;
 };
 
 #endif // __j1GUI_H__
