@@ -12,10 +12,11 @@ protected:
 
 public:
 	//Constructor
-	UI_Element(iPoint pos);
+	UI_Element() {}
+	UI_Element(int x, int y);
 
 	//Destructor
-	virtual ~UI_Element();
+	virtual ~UI_Element(){}
 
 	// Called each loop iteration
 	bool Update(float dt);
@@ -33,7 +34,7 @@ public:
 	virtual bool SetText();
 
 public:
-
+	iPoint position;
 
 
 };

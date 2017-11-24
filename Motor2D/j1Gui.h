@@ -2,6 +2,7 @@
 #define __j1GUI_H__
 
 #include "j1Module.h"
+#include "UI.h"
 
 #define CURSOR_WIDTH 2
 
@@ -12,12 +13,7 @@ enum GUI_TYPE {
 	IMAGE,
 	LABEL
 };
-struct Gui_Element {
 
-	GUI_TYPE type = NO_TYPE;
-
-
-};
 
 // ---------------------------------------------------
 class j1Gui : public j1Module
@@ -51,7 +47,7 @@ public:
 	// Gui creation functions
 
 
-	bool AdUIElement();
+	bool AdUIElement(int x, int y, GUI_TYPE type);
 
 	const SDL_Texture* GetAtlas() const;
 
@@ -59,6 +55,7 @@ private:
 
 	SDL_Texture* atlas;
 	p2SString atlas_file_name;
+	p2List<UI_Element>* ui_elements;
 };
 
 #endif // __j1GUI_H__
