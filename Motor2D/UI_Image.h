@@ -6,7 +6,7 @@ class Image : public UI_Element
 {
 private:
 
-	int x;
+	
 
 public:
 	Image(iPoint pos);

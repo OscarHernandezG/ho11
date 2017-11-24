@@ -72,10 +72,10 @@ bool j1Gui::AdUIElement(iPoint pos, GUI_TYPE type)
 	case NO_TYPE:
 		break;
 	case IMAGE:
-		ui_elements.add(Image(pos));
+	//	ui_elements.add(Image(pos));
 		break;
 	case LABEL:
-		ui_elements.add();
+	//	ui_elements.add();
 		break;
 	default:
 		break;

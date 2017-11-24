@@ -7,7 +7,7 @@ class Label : public UI_Element
 {
 private:
 
-	int x;
+	
 
 public:
 

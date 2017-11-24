@@ -10,15 +10,11 @@ protected:
 	
 
 public:
-	
+	iPoint position;
 public:
 
-	UI_Element(int x, int y);
+	UI_Element(iPoint pos);
 	virtual ~UI_Element();
 
-
-
-	virtual void Move(float dt) {};
-	virtual void Draw(SDL_Texture* sprites);
 
 };
