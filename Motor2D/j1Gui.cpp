@@ -6,7 +6,8 @@
 #include "j1Fonts.h"
 #include "j1Input.h"
 #include "j1Gui.h"
-#include "UI.h"
+#include "UI_Image.h"
+
 
 j1Gui::j1Gui() : j1Module()
 {
@@ -71,9 +72,10 @@ bool j1Gui::AdUIElement(iPoint pos, GUI_TYPE type)
 	case NO_TYPE:
 		break;
 	case IMAGE:
-		ui_elements.add()
+		ui_elements.add(Image(pos));
 		break;
 	case LABEL:
+		ui_elements.add();
 		break;
 	default:
 		break;
