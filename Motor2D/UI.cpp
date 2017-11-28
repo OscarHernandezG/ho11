@@ -1,9 +1,10 @@
 #include "UI.h"
+#include "j1Gui.h"
 
 
 
-
-UI_Element::UI_Element(int x, int y) : position(x,y) { 
+UI_Element::UI_Element(int x, int y) : position(x,y) 
+{
 }
 
 // Called each loop iteration

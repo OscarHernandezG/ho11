@@ -7,7 +7,8 @@
 #include "j1Input.h"
 #include "j1Gui.h"
 #include "UI_Image.h"
-
+#include "UI_Label.h"
+#include "UI_Button.h"
 
 j1Gui::j1Gui() : j1Module()
 {
@@ -68,27 +69,34 @@ const SDL_Texture* j1Gui::GetAtlas() const
 	return atlas;
 }
 
-bool j1Gui::AdUIElement(int x,int y, GUI_TYPE type)
+UI_Element* j1Gui::AdUIElement(int x,int y, GUI_TYPE type)
 {
-	bool ret = false;
-
+	UI_Element* ret = nullptr;
 
 	switch (type)
 	{
 	case NO_TYPE:
 		break;
 	case IMAGE:
-	//	ui_elements.add(Image(pos));
+		ret = new Image(x, y);
 		break;
 	case LABEL:
-	//	ui_elements.add();
+		ret = new Label(x, y);
+		break;
+	case BUTTON:
+		ret = new Button(x, y);
 		break;
 	default:
 		break;
 	}
 
-
-	ret = true;
+	for (int i(0); i < MAX_UI_ELEMENTS; i++) 
+	{
+		if (ui_elements[i] == nullptr) {
+			ui_elements[i] = ret;
+			break;
+		}
+	}
 
 	return ret;
 }

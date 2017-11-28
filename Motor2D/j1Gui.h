@@ -3,15 +3,19 @@
 
 #include "j1Module.h"
 #include "UI.h"
+#include "p2List.h"
 
 #define CURSOR_WIDTH 2
+
+#define MAX_UI_ELEMENTS 20
 
 // TODO 1: Create your structure of classes
 enum GUI_TYPE {
 	NO_TYPE,
 
 	IMAGE,
-	LABEL
+	LABEL,
+	BUTTON
 };
 
 
@@ -45,9 +49,8 @@ public:
 
 	// TODO 2: Create the factory methods
 	// Gui creation functions
-
-
-	bool AdUIElement(int x, int y, GUI_TYPE type);
+	
+	UI_Element* AdUIElement(int x, int y, GUI_TYPE type);
 
 	const SDL_Texture* GetAtlas() const;
 
@@ -56,7 +59,7 @@ private:
 	SDL_Texture* atlas;
 	p2SString atlas_file_name;
 
-	p2List<UI_Element>* ui_elements;
+	p2List<UI_Element*> ui_elements;
 
 };
 
