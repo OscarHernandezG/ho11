@@ -2,6 +2,7 @@
 #include "UI.h"
 #include "UI_Label.h"
 #include "UI_Image.h"
+#include "p2List.h"
 
 
 enum BUTTON_TYPE {
@@ -9,6 +10,7 @@ enum BUTTON_TYPE {
 
 
 };
+
 
 
 class Button : public UI_Element
@@ -20,21 +22,23 @@ public:
 
 	~Button(){}
 
-	bool Update() { return true; }
+	bool Update();
 
-	bool Draw() { return true; }
+	bool Clicked();
 
-	bool Clicked() { return true; }
+	bool MouseOnRect();
 
-	bool MouseOnRect() { return true; }
-
-	bool CleanUp() { return true; }
+	bool CleanUp();
 
 public:
 
 	Label* label = nullptr;
 	Image* image = nullptr;
+	BUTTON_TYPE type = NONE;
+	bool clicked = false;
 
+	/*Animation on_click;
+	Aniamtion mouse_on_rect;*/
 
 };
 

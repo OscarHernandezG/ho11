@@ -1,6 +1,8 @@
 #pragma once
 #include "UI.h"
+#include "j1Textures.h"
 
+struct SDL_Texture;
 
 class Image : public UI_Element
 {
@@ -10,16 +12,17 @@ private:
 
 public:
 	Image(int x, int y);
+	~Image();
 
-	~Image(){}
+	bool Update();
 
-	bool Update() { return true; }
+	bool CleanUp();
 
-	bool Draw() { return true; }
+	bool LoadImage(char* path);
 
+public:
 
-	bool CleanUp() { return true; }
-
+	SDL_Texture* image;
 
 };
 
