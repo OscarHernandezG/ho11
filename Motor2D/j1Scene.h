@@ -6,6 +6,8 @@
 struct SDL_Texture;
 class GuiImage;
 class GuiText;
+class Image;
+class Label;
 
 class j1Scene : public j1Module
 {
@@ -37,7 +39,9 @@ public:
 private:
 	SDL_Texture* debug_tex;
 	GuiImage* banner;
-	GuiText* text;
+//	GuiText* text;
+	Image* ui_image = nullptr;
+	Label* text = nullptr;
 };
 
 #endif // __j1SCENE_H__

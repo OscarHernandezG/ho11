@@ -1,5 +1,7 @@
 #include "UI.h"
 #include "j1Gui.h"
+#include "j1App.h"
+#include "j1Gui.h"
 
 
 
@@ -9,6 +11,7 @@ UI_Element::UI_Element(int x, int y) : position(x,y)
 
 // Called each loop iteration
 bool UI_Element::Update(float dt) {
+	
 	return true;
 }
 

@@ -23,7 +23,7 @@ public:
 	virtual ~UI_Element(){}
 
 	// Called each loop iteration
-	bool Update(float dt);
+	virtual bool Update(float dt);
 
 	// Called each loop iteration
 	virtual bool Draw(SDL_Texture* sprites);

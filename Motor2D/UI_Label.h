@@ -14,7 +14,7 @@ public:
 	Label(int x, int y);
 	~Label();
 
-	bool Update();
+	bool Update(float dt);
 	bool CleanUp();
 	bool SetText(char* text);
 

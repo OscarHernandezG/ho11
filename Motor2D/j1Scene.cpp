@@ -9,6 +9,10 @@
 #include "j1Map.h"
 #include "j1PathFinding.h"
 #include "j1Gui.h"
+#include "UI.h"
+#include "UI_Image.h"
+#include "UI_Button.h"
+#include "UI_Label.h"
 #include "j1Scene.h"
 
 j1Scene::j1Scene() : j1Module()
@@ -32,7 +36,17 @@ bool j1Scene::Awake()
 // Called before the first frame
 bool j1Scene::Start()
 {
-	/*
+
+	ui_image = (Image*)App->gui->AdUIElement(0, 0, IMAGE);
+
+	ui_image->LoadImageA("gui/atlas.png");
+
+	ui_image->rect.add({ 642, 169, 229, 69 });
+	ui_image->rect.add({ 0,113,229,69 });
+
+	text = (Label*)App->gui->AdUIElement(200, 0, LABEL);
+
+	text->SetText("Hello World");
 	if(App->map->Load("iso_walk.tmx") == true)
 	{
 		int w, h;
@@ -44,7 +58,7 @@ bool j1Scene::Start()
 	}
 
 	debug_tex = App->tex->Load("maps/path2.png");
-	*/
+	
 
 	// TODO 3: Create the banner (rect {485, 829, 328, 103}) and the text "Hello World"
 
@@ -54,7 +68,7 @@ bool j1Scene::Start()
 // Called each loop iteration
 bool j1Scene::PreUpdate()
 {
-	/*
+	
 	// debug pathfing ------------------
 	static iPoint origin;
 	static bool origin_selected = false;
@@ -77,7 +91,7 @@ bool j1Scene::PreUpdate()
 			origin_selected = true;
 		}
 	}
-	*/
+	
 	return true;
 }
 
@@ -85,10 +99,10 @@ bool j1Scene::PreUpdate()
 bool j1Scene::Update(float dt)
 {
 	// Gui ---
-	
+
 	// -------
 
-/*
+
 	if(App->input->GetKey(SDL_SCANCODE_L) == KEY_DOWN)
 		App->LoadGame("save_game.xml");
 
@@ -136,7 +150,7 @@ bool j1Scene::Update(float dt)
 		iPoint pos = App->map->MapToWorld(path->At(i)->x, path->At(i)->y);
 		App->render->Blit(debug_tex, pos.x, pos.y);
 	}
-	*/
+	
 	return true;
 }
 
@@ -144,7 +158,8 @@ bool j1Scene::Update(float dt)
 bool j1Scene::PostUpdate()
 {
 	bool ret = true;
-
+	//ui_image->Update();
+	//text->Update();
 	if(App->input->GetKey(SDL_SCANCODE_ESCAPE) == KEY_DOWN)
 		ret = false;
 

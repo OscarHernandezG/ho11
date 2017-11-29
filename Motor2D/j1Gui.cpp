@@ -46,6 +46,9 @@ bool j1Gui::PreUpdate()
 
 bool j1Gui::Update(float dt)
 {
+	for (p2List_item<UI_Element*>* iterator = App->gui->ui_elements.start; iterator != nullptr; iterator = iterator->next) {
+		iterator->data->Update(dt);
+	}
 	return true;
 }
 
@@ -90,13 +93,8 @@ UI_Element* j1Gui::AdUIElement(int x,int y, GUI_TYPE type)
 		break;
 	}
 
-	for (int i(0); i < MAX_UI_ELEMENTS; i++) 
-	{
-		if (ui_elements[i] == nullptr) {
-			ui_elements[i] = ret;
-			break;
-		}
-	}
+	ui_elements.add(ret);
+
 
 	return ret;
 }
