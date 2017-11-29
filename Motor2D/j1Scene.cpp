@@ -38,19 +38,71 @@ bool j1Scene::Start()
 {
 
 	ui_image = (Image*)App->gui->AdUIElement(0, 0, IMAGE);
-
-
 	ui_image->LoadImageA("Homework/wow_ui/login_background.png");
-	ui_image->rect.add({ 0, 0, 1920, 1080 });
+
+	Image* wow_logo = (Image*)App->gui->AdUIElement(0, 0, IMAGE);
+	wow_logo->LoadImageA("Homework/wow_ui/COMMON/Glues-Logo-Left.png",0.33f);
+	wow_logo = (Image*)App->gui->AdUIElement(85, 0, IMAGE);
+	wow_logo->LoadImageA("Homework/wow_ui/COMMON/Glues-Logo-Right.png",0.33f);
+
+	Image* ESRB_notice = (Image*)App->gui->AdUIElement(21, 415, IMAGE);
+	ESRB_notice->LoadImageA("Homework/wow_ui/LOGIN/Glues-ESRBRating.png");
+
+	Image* Blizzard_logo = (Image*)App->gui->AdUIElement(470, 475, IMAGE);
+	Blizzard_logo->LoadImageA("Homework/wow_ui/MainMenu/Glues-BlizzardLogo.png",0.66f);
+
+
+	Button* Manage_Account = (Button*)App->gui->AdUIElement(17, 400, BUTTON);
+	Manage_Account->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Manage Account", INTERACTABLE);
+
+	Button* Community_Site = (Button*)App->gui->AdUIElement(17, 439, BUTTON);
+	Community_Site->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Community Site", INTERACTABLE);
+	
+	Button* Login = (Button*)App->gui->AdUIElement(444, 380, BUTTON);
+	Login->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Login", INTERACTABLE);
+	int pos = 350;
+	Button* Cinematics = (Button*)App->gui->AdUIElement(872, pos, BUTTON);
+	Cinematics->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Cinematics", INTERACTABLE);
+	pos += 39;
+	Button* Credits = (Button*)App->gui->AdUIElement(872, pos, BUTTON);
+	Credits->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Credits", INTERACTABLE);
+	pos += 39;
+	Button* Terms_Of_Use = (Button*)App->gui->AdUIElement(872, pos, BUTTON);
+	Terms_Of_Use->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Terms Of Use", INTERACTABLE);
+	pos = 538-20;
+	Button* Quit = (Button*)App->gui->AdUIElement(872, pos, BUTTON);
+	Quit->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Quit", INTERACTABLE);
+
+	//ui_image->rect.add({ 0, 0, 1920, 1080 });
 
 	/*ui_image->LoadImageA("gui/atlas.png");
 
 	ui_image->rect.add({ 642, 169, 229, 69 });
 	ui_image->rect.add({ 0,113,229,69 });*/
 
-	text = (Label*)App->gui->AdUIElement(200, 0, LABEL);
+	text = (Label*)App->gui->AdUIElement(0, 546, LABEL);
+	text->SetText("Version 2.0.12 (6546) (Release)");
 
-	text->SetText("Hello World");
+	text = (Label*)App->gui->AdUIElement(0, 558, LABEL);
+	text->SetText("Mar 30 2007");
+
+	text = (Label*)App->gui->AdUIElement(306, 558, LABEL);
+	text->SetText("Copyright 2004-2007  Blizzard Entretainment. All Rights Reserved.");
+
+	text = (Label*)App->gui->AdUIElement(464, 264, LABEL);
+	text->SetText("Account Name");
+
+	text = (Label*)App->gui->AdUIElement(458, 319, LABEL);
+	text->SetText("Account Password");
+
+
+	Button* Name = (Button*)App->gui->AdUIElement(450, 282, BUTTON);
+	Name->DefineButton("Homework/wow_ui/COMMON1/Common-Input-Border.png", "");
+	pos = 538 - 20;
+	Button* Password = (Button*)App->gui->AdUIElement(450, 335, BUTTON);
+	Password->DefineButton("Homework/wow_ui/COMMON1/Common-Input-Border.png", "");
+
+	/*
 	if(App->map->Load("iso_walk.tmx") == true)
 	{
 		int w, h;
@@ -63,9 +115,8 @@ bool j1Scene::Start()
 
 	debug_tex = App->tex->Load("maps/path2.png");
 	
-
-	// TODO 3: Create the banner (rect {485, 829, 328, 103}) and the text "Hello World"
-
+	*/
+	
 	return true;
 }
 
@@ -74,6 +125,8 @@ bool j1Scene::PreUpdate()
 {
 	
 	// debug pathfing ------------------
+
+	/*
 	static iPoint origin;
 	static bool origin_selected = false;
 
@@ -95,7 +148,7 @@ bool j1Scene::PreUpdate()
 			origin_selected = true;
 		}
 	}
-	
+	*/
 	return true;
 }
 
@@ -105,7 +158,7 @@ bool j1Scene::Update(float dt)
 	// Gui ---
 
 	// -------
-
+	/*
 
 	if(App->input->GetKey(SDL_SCANCODE_L) == KEY_DOWN)
 		App->LoadGame("save_game.xml");
@@ -126,6 +179,8 @@ bool j1Scene::Update(float dt)
 		App->render->camera.x -= floor(200.0f * dt);
 
 	App->map->Draw();
+
+	
 
 	int x, y;
 	App->input->GetMousePosition(x, y);
@@ -154,7 +209,7 @@ bool j1Scene::Update(float dt)
 		iPoint pos = App->map->MapToWorld(path->At(i)->x, path->At(i)->y);
 		App->render->Blit(debug_tex, pos.x, pos.y);
 	}
-	
+	*/
 	return true;
 }
 

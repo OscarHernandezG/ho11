@@ -3,6 +3,7 @@
 #include "j1App.h"
 #include "j1Render.h"
 #include "j1Input.h"
+#include "p2Log.h"
 
 Image::Image(int x, int y) : UI_Element(x, y) {
 
@@ -15,22 +16,29 @@ Image::~Image() {
 
 bool Image::Update(float dt) {
 
-	SDL_Rect Rect;
+	App->render->Blit(image.start->data, position.x, position.y, &rect, 0, 0, 0, 0, scale);
 
-	//if (MouseOnRect())
-	//	Rect = rect.start->next->data;
-	//else
-		Rect = rect.start->data;
-
-	App->render->Blit(image.start->data, position.x, position.y);
 	return true;
 }
 bool Image::CleanUp() {
-	rect.clear();
+
 	return true;
 }
-bool Image::LoadImageA(char* path) {
+bool Image::LoadImageA(char* path, float scale) {
+
 	image.add(App->tex->Load(path));
+
+	position.x /= scale;
+	position.y /= scale;
+	imagen.create(path);
+	uint w = 0, h = 0;
+	App->tex->GetSize(image.end->data, w, h);
+	int rect_w = w;
+	int rect_h = h;
+	rect = { 0,0,rect_w,rect_h };
+
+	this->scale = scale;
+
 	return true;
 }
 
@@ -40,8 +48,8 @@ bool Image::MouseOnRect() {
 	iPoint mouse{ 0,0 };
 	App->input->GetMousePosition(mouse.x, mouse.y);
 
-	if (mouse.x > position.x && mouse.x < position.x + 229) {
-		if (mouse.y > position.y && mouse.y < position.y + 69) {
+	if (mouse.x > position.x && mouse.x < position.x + rect.w) {
+		if (mouse.y > position.y && mouse.y < position.y + rect.h) {
 			ret = true;
 		}
 	}

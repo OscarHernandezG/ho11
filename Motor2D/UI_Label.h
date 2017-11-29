@@ -2,6 +2,7 @@
 
 #include "UI.h"
 #include "p2SString.h"
+#include "SDL\include\SDL.h"
 
 class Label : public UI_Element
 {
@@ -20,6 +21,8 @@ public:
 
 public:
 
+	SDL_Texture* tex = nullptr;
+	SDL_Rect rect{ 0,0,0,0 };
 
 };
 

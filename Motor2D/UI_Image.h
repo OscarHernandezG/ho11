@@ -2,6 +2,7 @@
 #include "UI.h"
 #include "j1Textures.h"
 #include "SDL/include/SDL.h"
+#include "p2SString.h"
 
 struct SDL_Texture;
 
@@ -20,7 +21,7 @@ public:
 
 	bool CleanUp();
 
-	bool LoadImageA(char* path);
+	bool LoadImageA(char* path, float scale = 1);
 
 	bool MouseOnRect();
 
@@ -29,7 +30,14 @@ public:
 public:
 
 	p2List<SDL_Texture*> image;
-	p2List<SDL_Rect> rect;
+	
+	SDL_Rect rect;
+
+	p2SString imagen;
+
+	float scale = 1;
+
+
 };
 
 

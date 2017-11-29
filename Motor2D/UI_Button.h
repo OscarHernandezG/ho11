@@ -5,10 +5,13 @@
 #include "p2List.h"
 #include "SDL/include/SDL.h"
 
+struct SDL_Texture;
+
 enum BUTTON_TYPE {
 	NONE,
-
-
+	
+	INTERACTABLE,
+	INPUT_BOX
 };
 
 
@@ -30,6 +33,8 @@ public:
 
 	bool CleanUp();
 
+	void DefineButton(char* path, char* text, BUTTON_TYPE type = NONE);
+
 public:
 
 	Label* label = nullptr;
@@ -37,6 +42,8 @@ public:
 	BUTTON_TYPE type = NONE;
 	bool clicked = false;
 	SDL_Rect rect;
+
+	SDL_Texture* MouseHovering = nullptr;
 
 	/*Animation on_click;
 	Aniamtion mouse_on_rect;*/
