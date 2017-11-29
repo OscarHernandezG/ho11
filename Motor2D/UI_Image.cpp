@@ -17,12 +17,12 @@ bool Image::Update(float dt) {
 
 	SDL_Rect Rect;
 
-	if (MouseOnRect())
-		Rect = rect.start->next->data;
-	else
+	//if (MouseOnRect())
+	//	Rect = rect.start->next->data;
+	//else
 		Rect = rect.start->data;
 
-	App->render->Blit(image, position.x, position.y,&Rect,0);
+	App->render->Blit(image.start->data, position.x, position.y);
 	return true;
 }
 bool Image::CleanUp() {
@@ -30,7 +30,7 @@ bool Image::CleanUp() {
 	return true;
 }
 bool Image::LoadImageA(char* path) {
-	image = App->tex->Load(path);
+	image.add(App->tex->Load(path));
 	return true;
 }
 

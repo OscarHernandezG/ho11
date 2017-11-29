@@ -39,10 +39,14 @@ bool j1Scene::Start()
 
 	ui_image = (Image*)App->gui->AdUIElement(0, 0, IMAGE);
 
-	ui_image->LoadImageA("gui/atlas.png");
+
+	ui_image->LoadImageA("Homework/wow_ui/login_background.png");
+	ui_image->rect.add({ 0, 0, 1920, 1080 });
+
+	/*ui_image->LoadImageA("gui/atlas.png");
 
 	ui_image->rect.add({ 642, 169, 229, 69 });
-	ui_image->rect.add({ 0,113,229,69 });
+	ui_image->rect.add({ 0,113,229,69 });*/
 
 	text = (Label*)App->gui->AdUIElement(200, 0, LABEL);
 

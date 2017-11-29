@@ -28,7 +28,7 @@ public:
 
 public:
 
-	SDL_Texture* image;
+	p2List<SDL_Texture*> image;
 	p2List<SDL_Rect> rect;
 };
 
