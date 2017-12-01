@@ -39,11 +39,12 @@ public:
 
 	Label* label = nullptr;
 	Image* image = nullptr;
-	BUTTON_TYPE type = NONE;
+	BUTTON_TYPE Button_type = NONE;
 	bool clicked = false;
 	SDL_Rect rect;
 
 	SDL_Texture* MouseHovering = nullptr;
+	SDL_Texture* MouseClick = nullptr;
 
 	/*Animation on_click;
 	Aniamtion mouse_on_rect;*/

@@ -7,7 +7,7 @@
 
 
 Label::Label(int x, int y) : UI_Element( x,  y) {
-
+	type = LABEL;
 }
 
 Label::~Label() {

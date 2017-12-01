@@ -6,7 +6,7 @@
 #include "p2Log.h"
 
 Image::Image(int x, int y) : UI_Element(x, y) {
-
+	type = IMAGE;
 }
 
 

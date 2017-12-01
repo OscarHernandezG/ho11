@@ -5,13 +5,20 @@
 
 struct SDL_Texture;
 
+enum GUI_TYPE {
+	NO_TYPE,
+	IMAGE,
+	BUTTON,
+	LABEL
+};
+
 class UI_Element
 {
 protected:
 	
 
 public:
-
+	GUI_TYPE type;
 	iPoint position;
 public:
 

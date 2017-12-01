@@ -9,9 +9,10 @@
 Button::Button(int x, int y) : UI_Element(x, y) {
 	image = (Image*)App->gui->AdUIElement(x, y, IMAGE);
 	label = (Label*)App->gui->AdUIElement(x, y, LABEL);
+	type = BUTTON;
 
 	MouseHovering = App->tex->Load("Homework/wow_ui/COMMON/Glue-Panel-Button-Glow.png"); 
-
+	MouseClick = App->tex->Load("Homework/wow_ui/BUTTONS/UI-DialogBox-Button-Down.png");
 
 	// Idle.PushBack(); ...
 	// Clicked.PushBack(); ...
@@ -22,9 +23,12 @@ Button::Button(int x, int y) : UI_Element(x, y) {
 
 bool Button::Update(float dt) 
 {
-	if (type == INTERACTABLE) {
+	if (Button_type == INTERACTABLE) {
 		if (MouseOnRect())
-			App->render->Blit(MouseHovering, position.x - 3, position.y + 1);
+			if(App->input->GetMouseButtonDown(1) == KEY_REPEAT)
+				App->render->Blit(MouseClick, position.x+5, position.y+8);
+			else
+				App->render->Blit(MouseHovering, position.x - 3, position.y + 1);
 	}
 //	App->render->Blit(image->image.start->data, position.x, position.y/*,CurrAnim->GetCurrentFrame()*/);
 	//CurrAnim = Idle;
@@ -70,5 +74,5 @@ void Button::DefineButton(char* path, char* text, BUTTON_TYPE type)
 
 	label->position += label_offset;
 
-	this->type = type;
+	this->Button_type = type;
 }

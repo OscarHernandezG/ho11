@@ -10,13 +10,6 @@
 #define MAX_UI_ELEMENTS 20
 
 // TODO 1: Create your structure of classes
-enum GUI_TYPE {
-	NO_TYPE,
-
-	IMAGE,
-	LABEL,
-	BUTTON
-};
 
 
 // ---------------------------------------------------
