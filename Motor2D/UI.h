@@ -20,6 +20,7 @@ protected:
 public:
 	GUI_TYPE type;
 	iPoint position;
+	iPoint original_pos;
 public:
 
 	//Constructor

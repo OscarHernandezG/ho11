@@ -53,25 +53,25 @@ bool j1Scene::Start()
 
 
 	Button* Manage_Account = (Button*)App->gui->AdUIElement(17, 400, BUTTON);
-	Manage_Account->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Manage Account", INTERACTABLE);
+	Manage_Account->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Manage Account", "Cuenta",INTERACTABLE);
 
 	Button* Community_Site = (Button*)App->gui->AdUIElement(17, 439, BUTTON);
-	Community_Site->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Community Site", INTERACTABLE);
+	Community_Site->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Community Site", "Pagina web", INTERACTABLE);
 	
 	Button* Login = (Button*)App->gui->AdUIElement(444, 380, BUTTON);
-	Login->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Login", INTERACTABLE);
+	Login->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Login", "Iniciar sesion",INTERACTABLE);
 	int pos = 350;
 	Button* Cinematics = (Button*)App->gui->AdUIElement(872, pos, BUTTON);
-	Cinematics->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Cinematics", INTERACTABLE);
+	Cinematics->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Cinematics", "Cinematicas", INTERACTABLE);
 	pos += 39;
 	Button* Credits = (Button*)App->gui->AdUIElement(872, pos, BUTTON);
-	Credits->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Credits", INTERACTABLE);
+	Credits->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Credits", "Creditos",INTERACTABLE);
 	pos += 39;
 	Button* Terms_Of_Use = (Button*)App->gui->AdUIElement(872, pos, BUTTON);
-	Terms_Of_Use->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Terms Of Use", INTERACTABLE);
+	Terms_Of_Use->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Terms Of Use", "Terminos de servicio",INTERACTABLE);
 	pos = 538-20;
 	Button* Quit = (Button*)App->gui->AdUIElement(872, pos, BUTTON);
-	Quit->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Quit", INTERACTABLE);
+	Quit->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Quit", "Salir",INTERACTABLE);
 
 	//ui_image->rect.add({ 0, 0, 1920, 1080 });
 
@@ -90,10 +90,10 @@ bool j1Scene::Start()
 	text->SetText("Copyright 2004-2007  Blizzard Entretainment. All Rights Reserved.");
 
 	text = (Label*)App->gui->AdUIElement(464, 264, LABEL);
-	text->SetText("Account Name");
+	text->SetText("Account Name", "Nombre");
 
 	text = (Label*)App->gui->AdUIElement(458, 319, LABEL);
-	text->SetText("Account Password");
+	text->SetText("Account Password", "Contraseña");
 
 
 	Button* Name = (Button*)App->gui->AdUIElement(450, 282, BUTTON);

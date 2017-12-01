@@ -33,7 +33,7 @@ public:
 
 	bool CleanUp();
 
-	void DefineButton(char* path, char* text, BUTTON_TYPE type = NONE);
+	void DefineButton(char* path, char* text, char* textesp = nullptr, BUTTON_TYPE type = NONE);
 
 public:
 
