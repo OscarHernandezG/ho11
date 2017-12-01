@@ -13,6 +13,7 @@ protected:
 public:
 
 	iPoint position;
+	iPoint original_pos;
 public:
 
 	//Constructor
