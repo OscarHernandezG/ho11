@@ -42,6 +42,7 @@ public:
 	BUTTON_TYPE Button_type = NONE;
 	bool clicked = false;
 	SDL_Rect rect;
+	uint TAB = 0u;
 
 	SDL_Texture* MouseHovering = nullptr;
 	SDL_Texture* MouseClick = nullptr;

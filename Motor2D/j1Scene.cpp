@@ -15,6 +15,8 @@
 #include "UI_Label.h"
 #include "j1Scene.h"
 
+
+
 j1Scene::j1Scene() : j1Module()
 {
 	name.create("scene");
@@ -54,24 +56,35 @@ bool j1Scene::Start()
 
 	Button* Manage_Account = (Button*)App->gui->AdUIElement(17, 400, BUTTON);
 	Manage_Account->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Manage Account", "Cuenta",INTERACTABLE);
+	Manage_Account->TAB = 1;
 
 	Button* Community_Site = (Button*)App->gui->AdUIElement(17, 439, BUTTON);
 	Community_Site->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Community Site", "Pagina web", INTERACTABLE);
-	
+	Community_Site->TAB = 2;
+
 	Button* Login = (Button*)App->gui->AdUIElement(444, 380, BUTTON);
 	Login->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Login", "Iniciar sesion",INTERACTABLE);
 	int pos = 350;
+	Login->TAB = 5;
+
 	Button* Cinematics = (Button*)App->gui->AdUIElement(872, pos, BUTTON);
 	Cinematics->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Cinematics", "Cinematicas", INTERACTABLE);
 	pos += 39;
+	Cinematics->TAB = 6;
+
 	Button* Credits = (Button*)App->gui->AdUIElement(872, pos, BUTTON);
 	Credits->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Credits", "Creditos",INTERACTABLE);
 	pos += 39;
+	Credits->TAB = 7;
+
 	Button* Terms_Of_Use = (Button*)App->gui->AdUIElement(872, pos, BUTTON);
 	Terms_Of_Use->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Terms Of Use", "Terminos de servicio",INTERACTABLE);
 	pos = 538-20;
+	Terms_Of_Use->TAB = 8;
+
 	Button* Quit = (Button*)App->gui->AdUIElement(872, pos, BUTTON);
 	Quit->DefineButton("Homework/wow_ui/COMMON/Glue-Panel-Button-Up.png", "Quit", "Salir",INTERACTABLE);
+	Quit->TAB = 9;
 
 	//ui_image->rect.add({ 0, 0, 1920, 1080 });
 
@@ -99,8 +112,10 @@ bool j1Scene::Start()
 	Button* Name = (Button*)App->gui->AdUIElement(450, 282, BUTTON);
 	Name->DefineButton("Homework/wow_ui/COMMON1/Common-Input-Border.png", "");
 	pos = 538 - 20;
+	Name->TAB = 3;
 	Button* Password = (Button*)App->gui->AdUIElement(450, 335, BUTTON);
 	Password->DefineButton("Homework/wow_ui/COMMON1/Common-Input-Border.png", "");
+	Name->TAB = 4;
 
 	/*
 	if(App->map->Load("iso_walk.tmx") == true)
@@ -156,6 +171,11 @@ bool j1Scene::PreUpdate()
 bool j1Scene::Update(float dt)
 {
 	// Gui ---
+	if (App->input->GetKey(SDL_SCANCODE_TAB) == KEY_DOWN) {
+		tab_button++;
+		if (tab_button > 9)
+			tab_button = 1;
+	}
 
 	// -------
 	/*

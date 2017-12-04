@@ -4,6 +4,7 @@
 #include "j1App.h"
 #include "j1Input.h"
 #include "j1Gui.h"
+#include "j1Scene.h"
 
 
 Button::Button(int x, int y) : UI_Element(x, y) {
@@ -24,7 +25,7 @@ Button::Button(int x, int y) : UI_Element(x, y) {
 bool Button::Update(float dt) 
 {
 	if (Button_type == INTERACTABLE) {
-		if (MouseOnRect())
+		if (MouseOnRect()||TAB == App->scene->tab_button)
 			if(App->input->GetMouseButtonDown(1) == KEY_REPEAT)
 				App->render->Blit(MouseClick, position.x+5, position.y+8);
 			else

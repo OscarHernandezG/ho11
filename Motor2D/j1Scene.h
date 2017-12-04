@@ -3,6 +3,7 @@
 
 #include "j1Module.h"
 
+#define NUM_BUTTONS 7;
 struct SDL_Texture;
 class GuiImage;
 class GuiText;
@@ -42,6 +43,10 @@ private:
 //	GuiText* text;
 	Image* ui_image = nullptr;
 	Label* text = nullptr;
+
+
+public:
+	uint tab_button = 0;
 };
 
 #endif // __j1SCENE_H__
